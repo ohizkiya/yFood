@@ -1,0 +1,24 @@
+ ##
+ # YU Free Food
+ # .htaccess - Apache server configuration
+ #
+ # @author Yudi Rosen <yudi42@gmail.com>
+ # @package YU Free Food Website
+ ##
+
+# Remove Indexing of folders without an index file
+Options -Indexes
+
+# PHP settings
+php_value "zlib.output_compression" "1"
+
+# Apache Rewrites
+RewriteEngine On
+RewriteBase /
+
+# Protect special files
+RewriteRule \.(tpl|inc\.php|class\.php|ini|log)$ / [F]
+
+# Short URLs
+RewriteRule ^(about|dfac|my|user|submit|privacy)/?$		$1.php [L,NC]
+RewriteRule ^e(\d+)/?$						event.php?id=$1 [L,NC]
