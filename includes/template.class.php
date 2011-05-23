@@ -29,15 +29,9 @@ class template {
 			return;
 		}
 		
-		global $start_execution_time;
-		
 		$this->content = ob_get_clean();
 		
 		$this->populate();
-
-		$execution_time = microtime(true) - $start_execution_time;
-
-		print("{$this->page}\n<!-- Page generated in {$execution_time} seconds. -->");
 	}
 
 	public function disable() {

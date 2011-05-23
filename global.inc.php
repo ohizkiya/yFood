@@ -13,8 +13,6 @@ session_start();
 require_once('./config.inc.php');
 
 // 2) Set up our environment:
-$start_execution_time = microtime(true);
-
 error_reporting($config['error_reporting']);
 
 ini_set("include_path", $config['include_folder']);
