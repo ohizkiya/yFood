@@ -32,6 +32,8 @@ class template {
 		$this->content = ob_get_clean();
 		
 		$this->populate();
+
+		echo $this->page;
 	}
 
 	public function disable() {

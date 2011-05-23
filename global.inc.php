@@ -35,6 +35,5 @@ $User     = new user();
 $Event    = new event();
 $csrf     = csrf::getCSRF();
 $Template = new template();
-
 $config['csrf']  = $csrf->getKey();
 ?>
