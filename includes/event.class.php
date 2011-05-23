@@ -95,10 +95,11 @@ class event {
 		$s_foodtype   = intval($foodtype)   ? intval($foodtype)   : 0;
 
 		// Build our search query...
-		$query  = "SELECT e.*, c.name as campus FROM {$config['db_prefix']}events AS e JOIN {$config['db_prefix']}campuses AS c ON e.campus_id=c.id ";
-		$query .= "WHERE (date >= FROM_UNIXTIME({$s_start_date})) AND (date <= FROM_UNIXTIME({$s_end_date})) ";
-		$query .= $s_campus   ? " AND e.campus_id = '{$s_campus}' " : ' ';
-		$query .= $s_foodtype ? " AND e.id IN (SELECT eid FROM {$config['db_prefix']}foodserved WHERE fid='{$s_foodtype} ')" : ' ';
+		$query  = "SELECT e.*, c.name as campus FROM {$config['db_prefix']}events AS e JOIN {$config['db_prefix']}campuses AS c ON e.campus_id=c.id WHERE 1=1";
+		$query .= $s_start_date ? " AND (date >= FROM_UNIXTIME({$s_start_date}))" : ' ';
+		$query .= $s_end_date   ? " AND (date <= FROM_UNIXTIME({$s_end_date})) " : ' ';
+		$query .= $s_campus     ? " AND e.campus_id = '{$s_campus}' " : ' ';
+		$query .= $s_foodtype   ? " AND e.id IN (SELECT eid FROM {$config['db_prefix']}foodserved WHERE fid='{$s_foodtype} ')" : ' ';
 		$query .= "ORDER BY e.date ASC";
 
 		// ...and query it!
