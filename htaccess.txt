@@ -20,5 +20,5 @@ RewriteBase /
 RewriteRule \.(tpl|inc\.php|class\.php|ini|log)$ / [F]
 
 # Short URLs
-RewriteRule ^(about|dfac|my|user|submit|privacy)/?$		$1.php [L,NC]
-RewriteRule ^e(\d+)/?$						event.php?id=$1 [L,NC]
+RewriteRule ^(my|user|submit|privacy)/?$		$1.php [L,NC]
+RewriteRule ^e(\d+)/?$				event.php?id=$1 [L,NC]
