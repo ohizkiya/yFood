@@ -1,0 +1,39 @@
+<?php if(!defined('IN_APP')) die();
+/** 
+ * YU Free Food
+ * config.inc.php - Configuration script
+ *
+ * Please refer to the documentation for
+ * instructions on how to modify this file.
+ *
+ * @author Yudi Rosen <yudi42@gmail.com>
+ * @package YU Free Food Website
+ */
+
+define('SITE_ROOT', dirname(__FILE__) . '/');
+
+/* * * * * * * * * * * * * * * BEGIN CONFIGURATION SECTION * * * * * * * * * * * * * * */
+
+$config = array(
+	// Site configuration
+	'site_url'        => 'http://site.com/yfood/', // Site URL (include trailing slash!)
+	'site_name'	    => 'yFood',		     // Site title
+
+	// MySQL Database configuration
+	'db_hostname'	    => 'localhost',		     // Database server hostname
+	'db_username'	    => 'username',		     // Database user name
+	'db_password'	    => 'password',		     // Database password
+	'db_database'	    => 'database',		     // Database name
+	'db_prefix'	    => 'yf_',			     // Database table prefix
+
+	// Misc.
+	'error_reporting' => 'E_NONE',		     // Should be E_ALL for development, E_NONE for live site
+);
+
+/* * * * * * * * * * * * * * * END CONFIGURATION SECTION * * * * * * * * * * * * * * */
+
+// Just in case you want to change these:
+$config['include_folder']  = SITE_ROOT . 'includes/';
+$config['template_folder'] = SITE_ROOT . 'template/';
+
+?>

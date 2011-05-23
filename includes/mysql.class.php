@@ -19,6 +19,13 @@ class mysql {
 			@mysql_select_db($db_name, $this->link);
 		}
 
+		// Make sure we're good:
+		$error = $this->error();
+
+		if(!empty($error['error_msg'])) {
+			throw new Exception($error['error_no'] . ' - ' . $error['error_msg']);
+		}
+
 		// Get rid of sensitive info
 		unset($db_host, $db_user, $db_pass, $db_name);
 	}
