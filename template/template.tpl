@@ -128,17 +128,6 @@ HTML;
 			</div>
 		</div>
 
-	<?php
-	if(preg_match('/MSIE/i', $_SERVER['HTTP_USER_AGENT'])) {
-		echo '
-		<div style="background:#D32;border:1px solid red;color:white;font-weight:bold;padding:5px;text-align:center;">
-			Your browser has not been tested with this website, and may experience problems.<br />
-			<small>For best results, upgrade to <a style="color:white;text-decoration:underline;" href="http://mozilla.com/">Firefox</a> or <a style="color:white;text-decoration:underline;" href="http://google.com/chrome/">Chrome</a>.</small>
-		</div>
-		';
-	}
-	?>
-
 		<div id="content">
 			<!--PAGE_CONTENT-->
 		</div>
