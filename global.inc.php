@@ -4,7 +4,7 @@
  * global.inc.php - Global init script
  *
  * @author Yudi Rosen <yudi42@gmail.com>
- * @package YU Free Food Website
+ * @package yFood application
  */
 
 // 1) Load up our configuration & start the session

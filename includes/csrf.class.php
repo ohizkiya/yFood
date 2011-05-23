@@ -4,7 +4,7 @@
  * /includes/csrf.class.php - Cross-site request forgery protection class
  *
  * @author Yudi Rosen <yudi42@gmail.com>
- * @package YU Free Food Website
+ * @package yFood application
  */
 class csrf {
 	

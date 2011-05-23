@@ -4,7 +4,7 @@
  * /includes/event.class.php - Event object class
  *
  * @author Yudi Rosen <yudi42@gmail.com>
- * @package YU Free Food Website
+ * @package yFood application
  */
 class event {
 	public $Error;

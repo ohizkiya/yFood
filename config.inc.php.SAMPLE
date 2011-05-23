@@ -7,7 +7,7 @@
  * instructions on how to modify this file.
  *
  * @author Yudi Rosen <yudi42@gmail.com>
- * @package YU Free Food Website
+ * @package yFood application
  */
 
 define('SITE_ROOT', dirname(__FILE__) . '/');

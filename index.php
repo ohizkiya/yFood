@@ -4,7 +4,7 @@
  * index.php - Site home page
  *
  * @author Yudi Rosen <yudi42@gmail.com>
- * @package YU Free Food Website
+ * @package yFood application
  */
 
 require_once('./global.inc.php');

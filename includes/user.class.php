@@ -4,7 +4,7 @@
  * /includes/user.class.php - User management and auth class
  *
  * @author Yudi Rosen <yudi42@gmail.com>
- * @package YU Free Food Website
+ * @package yFood application
  */
 class user {
 	public $Error;
