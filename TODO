@@ -1,0 +1,38 @@
+GLOBAL:
+ o Improve look of pop-up privacy policy
+ o Improve look of Submit Event page
+ 
+
+USER:
+ * Reset password functionality
+ * Basic user controls - change pwd, delete account
+
+
+EVENTS:
+ * AJAX functionality
+    - Save to my events
+    - Remove from my events
+    - Share this event
+    - Flag for review?
+    - (admin) Edit/Remove event
+ * Submit Event functionality & admin review
+ o Does My Events more-or-less work?
+
+
+ADMIN:
+ * Basic admin panel
+    - Add/modify/delete events
+    - Add/modify/delete users
+    - Stats?
+    - Edit data (e.g. campuses)
+
+
+IDEAS:
+ o Export to outlook/google cal/etc
+ o SMS reminders? (look at Clickatell, BulkSMS, Esendex)
+
+
+KEY:
+ * = Important
+ o = Unimportant
+ - = Sub-item
