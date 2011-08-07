@@ -21,12 +21,12 @@ $Template->activelink = 'My Events';
 		$.ajax({url: '<?php echo $config['site_url'] ?>ajax.php',type:'POST',data:{action:'unsave',eid:eid,key:'<?php echo $config['csrf']; ?>'},
 			success: function(html){
 				if(html == "success") {
+					alert("Successfully removed event from My Events");
 					$("#event_" + eid).hide();
-					alert("Successfully unsaved event!");
 				}
 				else {
-					alert("Error!");
-	`			}
+					alert("Error while unsaving event!");
+				}
 			}
 		});
 	}
