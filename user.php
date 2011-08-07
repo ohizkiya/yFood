@@ -171,10 +171,27 @@ elseif($require_settings == true) {
 		</ul>
 
 		<div id="settings-acct">
-			Account Overview<br />
-			E-mail address<br />
-			# of reservations<br />
-			Delete Account
+			<p>
+				<h2>Account Overview</h2>
+				<b>Username:</b><br />
+				<b>Member since:</b><br />
+				<b>Number of reservations:</b>
+			</p>
+
+			<h2>SMS Settings:</h2>
+			<form method="post" action="">
+				<input type="checkbox" name="enable_sms" value="" /> Enable SMS notifications prior to my saved events.<br />
+				Text me <input type="text" value="10" name="sms_priormins" style="width:30px;" /> minutes prior to event start.<br />
+				Phone number: <input type="text" value="" name="sms_phonenumber" /> Carrier: 
+				<select>
+					<option value="cingularme.com">Cingular</option>
+					<option value="messaging.nextel.com">Nextel</option>
+					<option value="messaging.sprintpcs.com">Sprint</option>
+					<option value="tmomail.net">T-Mobile</option>
+					<option value="vtext.com">Verizon</option>
+					<option value="vmobl.com">Virgin Mobile</option>
+				</select>
+			</form>
 		</div>
  		<div id="settings-pass">
 			Change Password
