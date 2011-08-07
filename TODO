@@ -10,8 +10,6 @@ USER:
 
 EVENTS:
  * AJAX functionality
-    - Save to my events
-    - Remove from my events
     - Share this event
     - Flag for review?
     - (admin) Edit/Remove event
