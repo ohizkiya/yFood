@@ -20,6 +20,8 @@ p { margin: 10px 0 10px 0; }
 .clear { clear:both;}
 a { text-decoration: none;outline: none;border: none; }
 
+h1, h2, h3 { margin: 5px 0 5px 0; }
+
 body {
 	background: #E1E1E1 url(../images/bg.jpg) repeat-y top center;
 	color: #333;
