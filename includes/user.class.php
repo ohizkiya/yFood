@@ -42,6 +42,8 @@ class user {
 		else {
 			$s_pass = sha1($password);
 		}
+
+		$s_ip   = $_SERVER['REMOTE_ADDR'];
 		
 		$DB->query("SELECT id FROM {$config['db_prefix']}users WHERE email='{$s_email}'");
 		if($DB->fetch_num_rows() > 0) {
@@ -50,7 +52,7 @@ class user {
 		}
 		
 		// All good, let's go...
-		$DB->query("INSERT INTO {$config['db_prefix']}users (email, password) VALUES ('{$s_email}', '{$s_pass}')");
+		$DB->query("INSERT INTO {$config['db_prefix']}users (email, password, signup_ip) VALUES ('{$s_email}', '{$s_pass}', INET_ATON('{$s_ip}'))");
 
 		// May as well log us in...
 		$this->login($email, $password);

@@ -6,6 +6,7 @@ GLOBAL:
 USER:
  * Reset password functionality
  * Basic user controls - change pwd, delete account
+ * SMS reminders
 
 
 EVENTS:
@@ -27,7 +28,6 @@ ADMIN:
 
 IDEAS:
  o Export to outlook/google cal/etc
- o SMS reminders? (look at Clickatell, BulkSMS, Esendex)
  o Basic caching for food types & campuses
 
 
