@@ -5,8 +5,7 @@ GLOBAL:
 
 USER:
  * Reset password functionality
- * Basic user controls - change pwd, delete account
- * SMS reminders
+ * Basic user controls - Overview, SMS, change pwd
 
 
 EVENTS:
@@ -15,7 +14,7 @@ EVENTS:
     - Flag for review?
     - (admin) Edit/Remove event
  * Submit Event functionality & admin review
- o Does My Events more-or-less work?
+ o Does My Events more-or-less work? (Seems so - 07 Aug 11)
 
 
 ADMIN:
