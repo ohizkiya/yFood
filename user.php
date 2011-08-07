@@ -218,20 +218,20 @@ elseif($require_settings == true) {
 			</form>
 		</div>
  		<div id="settings-pass">
-			Change Password
+			<h2>Change Password</h2>
 		</div>
 		<div id="settings-del">
-			<b>Delete Account</b><br />
+			<h2>Delete Account</h2><br />
  
 			<form onsubmit="return $('#confirm_delete').attr('checked') ? true : false;" action="./user?action=deleteaccount" method="post">
-				<b style="color:red;">Warning:</b> This will instantly and permamently delete your account and reservations.<br /><br />
+				<div class="errormsg">Warning:</b> This will instantly and permamently delete your account and My Events data.</div><br />
 
 				<input type="checkbox" id="confirm_delete" name="confirm_delete" value="" />
 				<label for="confirm_delete">I understand that clicking the button below will delete my account and all associated data.</label><br /><br />
 
 				<input type="hidden" name="key" value="{$config['csrf']}" /> 
  
-				<input name="submit" type="submit" class="button" value="Delete" /> 
+				<input name="submit" type="submit" class="button" value="Delete Account" /> 
 			</form>
 		</div>
 	</div>

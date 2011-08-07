@@ -1,11 +1,13 @@
 GLOBAL:
  o Improve look of pop-up privacy policy
  o Improve look of Submit Event page
+ * COMPLETE ALL UNIT TESTS!!!1!
  
 
 USER:
  * Reset password functionality
  * Basic user controls - Overview, SMS, change pwd
+ * Validate email - before My Library, SMS usage
  * USER ROLES
 
 
@@ -29,9 +31,6 @@ ADMIN:
 IDEAS:
  o Export to outlook/google cal/etc
  o Basic caching for food types & campuses
-
-
- * COMPLETE ALL UNIT TESTS!!!1!
 
 KEY:
  * = Important
