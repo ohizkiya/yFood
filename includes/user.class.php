@@ -92,6 +92,7 @@ class user {
 
 			$_SESSION['uid']      = $user['id'];
 			$_SESSION['username'] = $user['email'];
+			$_SESSION['joindate'] = $user['member_since'];
 
 			return true;
 		}

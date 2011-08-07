@@ -169,6 +169,16 @@ elseif($require_reset == true) {
 HTML;
 }
 elseif($require_settings == true) {
+	// Get user data:
+	$username    = htmlentities($_SESSION['username']);
+	$membersince = htmlentities($_SESSION['joindate']); // TODO- formatting
+
+	// Get reservations count:
+	$s_uid       = intval($_SESSION['uid']);
+	$DB->query("SELECT COUNT(*) FROM {$config['db_prefix']}reservations WHERE uid='{$s_uid}'");
+	$results     = $DB->fetch_row();
+	$num_reservs = intval($results['COUNT(*)']);
+	
 	echo <<<HTML
 
 	<script type="text/javascript">
@@ -185,9 +195,9 @@ elseif($require_settings == true) {
 		<div id="settings-acct">
 			<p>
 				<h2>Account Overview</h2>
-				<b>Username:</b><br />
-				<b>Member since:</b><br />
-				<b>Number of reservations:</b>
+				<b>Username:</b> {$username}<br />
+				<b>Member since:</b> {$membersince}<br />
+				<b>Number of reservations:</b> {$num_reservs}
 			</p><br />
 
 			<h2>SMS Settings:</h2>
