@@ -6,6 +6,7 @@ GLOBAL:
 USER:
  * Reset password functionality
  * Basic user controls - Overview, SMS, change pwd
+ * USER ROLES
 
 
 EVENTS:
