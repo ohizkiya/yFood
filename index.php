@@ -27,7 +27,12 @@ $foodtypes = $DB->fetch_row_set();
 	function save_event(eid) {
 		$.ajax({url: '<?php echo $config['site_url'] ?>ajax.php',type:'POST',data:{action:'save',eid:eid,key:'<?php echo $config['csrf']; ?>'},
 			success: function(html){
-				$("#fp_top").append(html);
+				if(html == 'success') {
+					alert("Successfully saved event #" + eid + " to My Events");
+				}
+				else {
+					alert("Error while saving event #" + eid + " to My Events");
+				}
 			}
 		});
 	}
