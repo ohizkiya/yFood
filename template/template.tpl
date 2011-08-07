@@ -133,7 +133,8 @@ HTML;
 		</div>
 
 		<div id="footer">
-			Powered by <a href="http://github.com/yrosen/yFood">yFood</a>.
+			Powered by <a 
+href="http://github.com/yrosen/yFood">yFood</a>.
 		</div>
 	</div>
 </body>

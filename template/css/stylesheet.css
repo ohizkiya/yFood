@@ -118,11 +118,18 @@ div#header_navigation a#active_nav:hover { background-color: #333; }
 /* BEGIN: Site Footer */
 div#footer {
 	background: #EEE url(../images/header_bg.png) bottom repeat-x;
-	height: 25px;
+	height: 30px;
 	font-size: 11px;
-	line-height: 20px;
+	font-weight: bold;
+	line-height: 25px;
 	text-align: center;
 }
+
+div#footer a {
+	color: #333;
+	text-decoration: underline;
+}
+
 /* END: Site Footer */
 
 div#fp_top {
