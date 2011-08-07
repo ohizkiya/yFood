@@ -137,7 +137,7 @@ class event {
 			return false;
 		}
 
-		// Not only do we need the events stuff, we also need the campus name (campus.name WHERE events.campusid = campus.id):
+		// SELECT DISTINCT uid,eid FROM {$config['db_prefix']}reservations
 		$DB->query("
 			SELECT e.*, c.name as campus FROM {$config['db_prefix']}events AS e JOIN {$config['db_prefix']}campuses AS c 
 			ON e.campus_id=c.id 
@@ -164,17 +164,18 @@ class event {
 		return $event_list;
 	}
 
-	public function reserve_event($eid) {	
+	public function save_event($eid) {	
 		global $config, $DB;
 
-		$event_list = array();
+		$s_eid = intval($eid);
+		$s_uid = intval($_SESSION['uid']);
 
-		$uid = intval($_SESSION['uid']);
-		
-		if(!$uid) {
-			$this->Error = 'Could not determine current user.';
-			return false;
-		}
+		// Duplicates are checked by the DB:
+		$query = "INSERT IGNORE INTO {$config['db_prefix']}reservations (uid, eid)	VALUES ('{$s_uid}', '{$s_eid}')";
+		$DB->query($query);
+
+		// Who needs error checking?
+		return true;
 	}
 }
 ?>

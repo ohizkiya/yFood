@@ -69,11 +69,9 @@ CREATE TABLE IF NOT EXISTS `yf_foodtypes` (
 --
 
 CREATE TABLE IF NOT EXISTS `yf_reservations` (
-  `id` int(8) NOT NULL AUTO_INCREMENT,
-  `uid` int(8) NOT NULL COMMENT 'User ID',
-  `eid` int(8) NOT NULL COMMENT 'Event ID',
-  PRIMARY KEY (`id`),
-  KEY `uid` (`uid`,`eid`)
+`eid` INT( 8 ) NOT NULL ,
+`uid` INT( 8 ) NOT NULL ,
+PRIMARY KEY ( `eid` , `uid` )
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

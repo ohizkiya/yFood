@@ -24,8 +24,8 @@ $foodtypes = $DB->fetch_row_set();
 <script type="text/javascript">$(function() {$("#startdate").datepicker({ dateFormat: 'DD, M d, yy' });$("#enddate").datepicker({ dateFormat: 'DD, M d, yy' });});</script>
 
 <script type="text/javascript">
-	function reserve_event(eid) {
-		$.ajax({url: './ajax.php',type:'POST',data:{action:'reserve',eid:eid,key:'<?php echo $config['csrf']; ?>'},
+	function save_event(eid) {
+		$.ajax({url: '<?php echo $config['site_url'] ?>ajax.php',type:'POST',data:{action:'save',eid:eid,key:'<?php echo $config['csrf']; ?>'},
 			success: function(html){
 				$("#fp_top").append(html);
 			}
@@ -33,7 +33,7 @@ $foodtypes = $DB->fetch_row_set();
 	}
 
 	function email_event(eid) {
-		$.ajax({url: './ajax.php',type:'POST',data:{action:'email',eid:eid,key:'<?php echo $config['csrf']; ?>'},
+		$.ajax({url: '<?php echo $config['site_url'] ?>ajax.php',type:'POST',data:{action:'email',eid:eid,key:'<?php echo $config['csrf']; ?>'},
 			success: function(html){
 				$("#fp_top").append(html);
 			}
@@ -115,7 +115,7 @@ echo '<div id="eventlist">';
 			if($User->is_loggedin()) {
 				$icons = <<<HTML
 				<ul class="ui_icons" class="ui-widget ui-helper-clearfix">
-					<li class="ui-state-default ui-corner-all" onclick="reserve_event('{$event['id']}');" title="Save to My Events"><span class="ui-icon ui-icon-folder-open"></span></li>
+					<li class="ui-state-default ui-corner-all" onclick="save_event('{$event['id']}');" title="Save to My Events"><span class="ui-icon ui-icon-folder-open"></span></li>
 					<li class="ui-state-default ui-corner-all" onclick="email_event('{$event['id']}');" title="Share this event"><span class="ui-icon ui-icon-mail-closed"></span></li>
 				</ul>
 HTML;
