@@ -77,6 +77,18 @@ switch(strtolower($_GET['action'])) {
 		
 		break;
 
+	case 'deleteaccount':
+		// Was it something I said? :(
+		if($csrf->checkKey($_POST['key'])) {
+			$User->delete_account($_SESSION['username']);
+			header("Location: {$config['site_url']}");
+			die();
+		}
+		else {
+			$errormsg = '<div class="errormsg">Could not delete account!</div>';
+		}
+
+
 	case 'settings':
 	default:
 		if(!$User->is_loggedin()) {
@@ -176,7 +188,7 @@ elseif($require_settings == true) {
 				<b>Username:</b><br />
 				<b>Member since:</b><br />
 				<b>Number of reservations:</b>
-			</p>
+			</p><br />
 
 			<h2>SMS Settings:</h2>
 			<form method="post" action="">
@@ -184,13 +196,15 @@ elseif($require_settings == true) {
 				Text me <input type="text" value="10" name="sms_priormins" style="width:30px;" /> minutes prior to event start.<br />
 				Phone number: <input type="text" value="" name="sms_phonenumber" /> Carrier: 
 				<select>
+					<!-- TODO: Get these values out of here, perform strict checking, etc -->
 					<option value="cingularme.com">Cingular</option>
 					<option value="messaging.nextel.com">Nextel</option>
 					<option value="messaging.sprintpcs.com">Sprint</option>
 					<option value="tmomail.net">T-Mobile</option>
 					<option value="vtext.com">Verizon</option>
 					<option value="vmobl.com">Virgin Mobile</option>
-				</select>
+				</select><br /><br />
+				<input type="submit" value="Submit" />
 			</form>
 		</div>
  		<div id="settings-pass">
@@ -199,7 +213,7 @@ elseif($require_settings == true) {
 		<div id="settings-del">
 			<b>Delete Account</b><br />
  
-			<form action="./user?action=deleteaccount" method="post">
+			<form onsubmit="return $('#confirm_delete').attr('checked') ? true : false;" action="./user?action=deleteaccount" method="post">
 				<b style="color:red;">Warning:</b> This will instantly and permamently delete your account and reservations.<br /><br />
 
 				<input type="checkbox" id="confirm_delete" name="confirm_delete" value="" />

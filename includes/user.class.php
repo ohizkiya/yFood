@@ -139,6 +139,40 @@ class user {
 		return preg_match('/^([a-z0-9]+)([._-]([0-9a-z_-]+))*@([a-z0-9]+)([._-]([0-9a-z]+))*([.]([a-z0-9]+){2,4})$/i', $email);
 	}
 
+	/**
+	 * Delete everything related to an account...
+	 */
+	public function delete_account($email) {
+		global $config, $DB;
+
+		$s_email = $DB->escape_string($email);
+
+
+		if(!$this->is_valid_email($s_email)) {
+			$this->Error = 'Invalid email address!';
+			return false;
+		}
+
+
+		$this->logout();
+
+
+
+		// Could do this in less queries but I'm cautious...
+		$DB->query("SELECT id FROM {$config['db_prefix']}users WHERE email='{$s_email}' LIMIT 1");
+
+		$uid = $DB->fetch_row();
+
+		$uid = intval($uid['id']);
+
+		// Delete reservations:
+		$DB->query("DELETE FROM {$config['db_prefix']}reservations WHERE uid='{$uid}'");
+
+		// Delete the user row:
+		$DB->query("DELETE FROM {$config['db_prefix']}users WHERE id='{$uid}'");
+
+	}
+
 	// TODO: Look into FACEBOOK authentication
 }
 
