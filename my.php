@@ -16,6 +16,30 @@ if(!$User->is_loggedin()) {
 $Template->ptitle = 'My Events';
 $Template->activelink = 'My Events';
 ?>
+<script type="text/javascript">
+	function unsave_event(eid) {
+		$.ajax({url: '<?php echo $config['site_url'] ?>ajax.php',type:'POST',data:{action:'unsave',eid:eid,key:'<?php echo $config['csrf']; ?>'},
+			success: function(html){
+				if(html == "success") {
+					$("#event_" + eid).hide();
+					alert("Successfully unsaved event!");
+				}
+				else {
+					alert("Error!");
+	`			}
+			}
+		});
+	}
+
+	function email_event(eid) {
+		$.ajax({url: '<?php echo $config['site_url'] ?>ajax.php',type:'POST',data:{action:'email',eid:eid,key:'<?php echo $config['csrf']; ?>'},
+			success: function(html){
+				$("#fp_top").append(html);
+			}
+		});
+	}
+</script>
+
 <div id="fp_top">
 	<h1>My Events</h1>
 </div>
@@ -42,7 +66,7 @@ else {
 		if($User->is_loggedin()) {
 			$icons = <<<HTML
 			<ul class="ui_icons" class="ui-widget ui-helper-clearfix">
-				<li class="ui-state-default ui-corner-all" onclick="alert('Removed #{$event['id']}');" title="Delete from My Events"><span class="ui-icon ui-icon-circle-close"></span></li>
+				<li class="ui-state-default ui-corner-all" onclick="unsave_event('{$event['id']}');" title="Delete from My Events"><span class="ui-icon ui-icon-circle-close"></span></li>
 				<li class="ui-state-default ui-corner-all" onclick="alert('Shared Event #{$event['id']}');" title="Share this event"><span class="ui-icon ui-icon-mail-closed"></span></li>
 			</ul>
 HTML;

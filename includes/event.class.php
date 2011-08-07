@@ -177,5 +177,18 @@ class event {
 		// Who needs error checking?
 		return true;
 	}
+
+	public function unsave_event($eid) {	
+		global $config, $DB;
+
+		$s_eid = intval($eid);
+		$s_uid = intval($_SESSION['uid']);
+
+		// Duplicates are checked by the DB:
+		$DB->query("DELETE FROM {$config['db_prefix']}reservations WHERE uid='{$s_uid}' AND eid='{$s_eid}'");
+
+		// Who needs error checking?
+		return true;
+	}
 }
 ?>

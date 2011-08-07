@@ -19,20 +19,21 @@ if(!$User->is_loggedin()) {
  * But that shouldn't matter if we're using user auth/sessions, right?
  */
 
-// For some reason this is not working as a Switch...
+switch($_POST['action']) {
+	case 'save':
+		echo $Event->save_event($_POST['eid']) ? 'success' : 'error';
+		break;
 
-if($_POST['action'] == 'save') {
-	// Who needs error checking?
-	echo $Event->save_event($_POST['eid']) ? 'success' : 'error';
-}
-elseif($_POST['action'] == 'unsave') {
-	echo 'UNSAVE!';
-}
-elseif($_POST['action'] == 'email') {
-	echo 'EMAIL!';
-}
-else {
-	echo 'ERROR!!!!';
-}
+	case 'unsave':
+		echo $Event->unsave_event($_POST['eid']) ? 'success' : 'error';
+		break;
 
+	case 'email':
+		echo 'Email!';
+		break;
+
+	default:
+		header("Location: {$config['site_url']}");
+		die();
+}
 ?>

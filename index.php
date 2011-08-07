@@ -97,7 +97,7 @@ if($search_error) {
 }
 
 if(count($events) == 0) {
-	echo '<p style="text-align:center;"><i>No events found matching your query!</i></p>';
+	echo '<div class="errormsg">No events found matching your query!</div>';
 }
 else {
 
