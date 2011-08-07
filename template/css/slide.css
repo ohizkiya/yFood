@@ -103,7 +103,7 @@
 	font-size: 1.6em;
 	padding: 5px 0 10px;
 	margin: 0;
-	color: white;
+
 }
 
 #panel h2{
@@ -112,6 +112,10 @@
 	margin: 0;
 	color: white;
 }
+
+.h1_register { color: white;}
+.h1_login { color:#15ADFF;}
+
 #panel a { text-decoration: none; color: #15ADFF; }
 #panel a:hover { color: white; }
 

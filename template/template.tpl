@@ -65,7 +65,7 @@ HTML;
 			
 					<div class="section">
 						<form action="./user?action=register" method="post">
-							<h1>Not a member yet? Sign Up!</h1>
+							<h1 class="h1_register">Not a member yet? Sign Up!</h1>
 							<label for="reg_email">E-mail:</label>
 							<input class="textbox" type="text" name="reg_email" id="reg_email" value="" />
 					
@@ -82,7 +82,7 @@ HTML;
 			
 					<div class="section right">
 						<form action="./user?action=login" method="post">
-							<h1>Member Login</h1>
+							<h1 class="h1_login">Member Login</h1>
 							<label for="login_email">E-mail:</label>
 							<input class="textbox" type="text" name="login_email" id="login_email" value="" />
 					
