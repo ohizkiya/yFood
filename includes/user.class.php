@@ -75,6 +75,7 @@ class user {
 		}
 		
 		$s_pass = sha1($password);
+		$s_ip   = $_SERVER['REMOTE_ADDR'];
 		
 		$DB->query("SELECT * FROM {$config['db_prefix']}users WHERE email='{$s_email}' AND password='{$s_pass}'");
 		
@@ -84,6 +85,8 @@ class user {
 		}
 		else {
 			$user = $DB->fetch_row();
+
+			$DB->QUERY("UPDATE {$config['db_prefix']}users SET latest_ip=INET_ATON('{$s_ip}') WHERE email='{$s_email}'");
 
 			$_SESSION['uid']      = $user['id'];
 			$_SESSION['username'] = $user['email'];

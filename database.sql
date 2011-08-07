@@ -84,5 +84,10 @@ CREATE TABLE IF NOT EXISTS `yf_users` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `email` varchar(255) NOT NULL,
   `password` char(40) NOT NULL,
+  `member_since` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `latest_signin` timestamp NULL DEFAULT NULL,
+  `sms_settings` text,
+  `signup_ip` int(4) DEFAULT NULL,
+  `latest_ip` int(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;

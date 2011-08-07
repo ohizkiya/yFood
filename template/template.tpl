@@ -43,8 +43,8 @@
 						<li class="left">&nbsp;</li>
 						<li>Hello, {$username}!</li>
 						<li class="sep">|</li>
-						<!-- <li><a href="./user?action=settings">Settings</a></li>
-						<li class="sep">&bull;</li> -->
+						<li><a href="./user?action=settings">Settings</a></li>
+						<li class="sep">|</li>
 						<li><a href="./user?action=logout">Log Out</a></li>
 						<li class="right">&nbsp;</li>
 					</ul>
