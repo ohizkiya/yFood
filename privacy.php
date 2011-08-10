@@ -19,10 +19,10 @@ else {
 <b>Our privacy policy is simple:</b>
 
 <ol>
-	<li>We need your e-mail address for the sole purpose of managing your account. We will not spam you. We will not give this information to anyone.</li>
-	<li>In fact, we won't contact you at all unless you specifically request it (e.g. password resets and event reminders).
-	<li>Your password is encrypted using a one-way algorithm. We do not have access to your plaintext password, and can not decrypt what we do have.</li>
-	<li>You will always have the option to instantly and permamently delete your account and all data associated with it.</li>
+	<li>We need your e-mail address for the sole purpose of managing your account. We will not spam you. We will not give this information to anyone.</li><br /><br />
+	<li>In fact, we won't contact you at all unless you specifically request it (e.g. password resets and event reminders).</li><br /><br />
+	<li>Your password is encrypted using a one-way algorithm. We do not have access to your plaintext password, and can not decrypt what we do have.</li><br /><br />
+	<li>You will always have the option to instantly and permamently delete your account and all data associated with it.</li><br />
 </ol>
 
 <!--
