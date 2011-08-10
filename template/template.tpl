@@ -128,6 +128,14 @@ HTML;
 			</div>
 		</div>
 
+		<?php
+		if(strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE')) { ?>
+		<div class="critical">
+			Your browser smells like Internet Explorer. Please upgrade to a supported browser, such as <a href="http://firefox.com">Mozilla Firefox</a> or <a href="http://www.google.com/chrome/">Google Chrome</a>.
+		</div>
+
+		<?php } ?>
+
 		<div id="content">
 			<!--PAGE_CONTENT-->
 		</div>

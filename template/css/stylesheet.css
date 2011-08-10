@@ -70,6 +70,24 @@ ul, ol { margin: 3px 5px 5px 30px; }
 	padding:3px;
 }
 
+.critical {
+	background: red;
+	color: white;
+	font-weight:bold;
+	padding: 8px;
+	text-align: center;
+}
+
+.critical a {
+	color: white;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.critical a:hover {
+	color: #CCC;
+}
+
 div#page {
 	margin: 0 auto;
 	width: 950px;
