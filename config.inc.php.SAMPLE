@@ -35,4 +35,12 @@ $config = array(
 // Just in case you want to change these:
 $config['include_folder']  = SITE_ROOT . 'includes/';
 $config['template_folder'] = SITE_ROOT . 'template/';
+
+// User gruops:
+$config['mgroup'] = array(
+	'banned'     => 0,
+	'unverified' => 1,
+	'member'     => 2,
+	'admin'      => 3
+);
 ?>
