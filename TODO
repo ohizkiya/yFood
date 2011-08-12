@@ -1,6 +1,7 @@
 GLOBAL:
- o Improve look of pop-up privacy policy
  o Improve look of Submit Event page
+ * Factor out JS/AJAX into seperate file
+ * Update event.php with JS from index.php
  * COMPLETE ALL UNIT TESTS!!!1!
 
 INDEX:
