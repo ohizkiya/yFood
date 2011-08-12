@@ -20,7 +20,8 @@ p { margin: 10px 0 10px 0; }
 .clear { clear:both;}
 a { text-decoration: none;outline: none;border: none; }
 
-h1, h2, h3 { margin: 5px 0 5px 0; }
+h1, h2, h3 { margin: 5px 0 5px; }
+content  h2 { border-bottom: 1px solid #CDCDCD; padding-bottom: 8px; }
 
 body {
 	background: #E1E1E1 url(../images/bg.jpg) repeat-y top center;

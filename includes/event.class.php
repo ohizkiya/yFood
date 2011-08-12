@@ -42,7 +42,7 @@ class event {
 		// Not only do we need the events stuff, we also need the campus name (campus.name WHERE events.campusid = campus.id):
 		$DB->query("
 			SELECT e.*, c.name as campus FROM {$config['db_prefix']}events AS e JOIN {$config['db_prefix']}campuses AS c 
-			ON e.campus_id=c.id /* WHERE date >= CURDATE() */ ORDER BY e.time ASC
+			ON e.campus_id=c.id /* WHERE date >= CURDATE() */ ORDER BY e.time DESC
 		");
 
 		$events = $DB->fetch_row_set();
@@ -68,14 +68,13 @@ class event {
 		global $config, $DB;
 
 		// Just a test:
-		$title = $DB->escape_string('Sephardic Club Kickoff Event');
-		$host  = $DB->escape_string('Sephardic Club');
-		$date  = "February 2 2011";
-		$time  = "20:00";
-		$location = $DB->escape_string("Furst Hall Room 205");
-		$notes  = $DB->escape_string('Learn an invaluable life lesson at a shiur with the Tessones<p>GIRLS: Buses will be leaving 245 Stanton Hall at 7PM sharp.</p>');
+		$title = $DB->escape_string('YU Homecoming 2011');
+		$host  = $DB->escape_string('Yeshiva University');
+		$date  = "September 18 2011";
+		$time  = "10:00";
+		$location = $DB->escape_string("Wilf Campus");
+		$notes  = $DB->escape_string('Come home to Yeshiva University!  Visit campus and catch up with old friends and classmates at YU Homecoming 2011.  <p>More information is at: <a href="http://www.yu.edu/homecoming2011/">http://www.yu.edu/homecoming2011/</a>.');
 		$campus = '1';
-	
 		$time = strtotime($date . ' ' .  $time);
 		$date = strtotime($date);
 

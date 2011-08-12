@@ -2,7 +2,9 @@ GLOBAL:
  o Improve look of pop-up privacy policy
  o Improve look of Submit Event page
  * COMPLETE ALL UNIT TESTS!!!1!
- 
+
+INDEX:
+ * DATE should be optional when searching
 
 USER:
  * Reset password functionality

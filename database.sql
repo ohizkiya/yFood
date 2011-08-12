@@ -84,6 +84,7 @@ CREATE TABLE IF NOT EXISTS `yf_users` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `email` varchar(255) NOT NULL,
   `password` char(40) NOT NULL,
+  `mgroup` int(4) DEFAULT NULL,
   `member_since` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `latest_signin` timestamp NULL DEFAULT NULL,
   `sms_settings` text,
