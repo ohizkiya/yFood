@@ -40,9 +40,11 @@ class event {
 		$event_list = array();
 
 		// Not only do we need the events stuff, we also need the campus name (campus.name WHERE events.campusid = campus.id):
+		$where = $config['show_past_events'] ? '' : ' WHERE date >= CURDATE()';
+
 		$DB->query("
 			SELECT e.*, c.name as campus FROM {$config['db_prefix']}events AS e JOIN {$config['db_prefix']}campuses AS c 
-			ON e.campus_id=c.id /* WHERE date >= CURDATE() */ ORDER BY e.time DESC
+			ON e.campus_id=c.id {$where} ORDER BY e.time DESC
 		");
 
 		$events = $DB->fetch_row_set();

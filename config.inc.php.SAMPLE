@@ -28,6 +28,7 @@ $config = array(
 
 	// Misc.
 	'error_reporting'   => 'E_NONE',		     // Should be E_ALL for development, E_NONE for live site
+	'show_past_events'  => true,			     // Show past events in event listing?
 );
 
 /* * * * * * * * * * * * * * * END CONFIGURATION SECTION * * * * * * * * * * * * * * */
