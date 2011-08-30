@@ -18,7 +18,7 @@ ol, ul { list-style: none; }
 
 p { margin: 10px 0 10px 0; }
 .clear { clear:both;}
-a { text-decoration: none;outline: none;border: none; }
+a { text-decoration: none;outline: none;border: none; color:#21799E; }
 
 h1, h2, h3 { margin: 5px 0 5px; }
 content  h2 { border-bottom: 1px solid #CDCDCD; padding-bottom: 8px; }
