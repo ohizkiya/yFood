@@ -79,14 +79,37 @@ switch(strtolower($_GET['action'])) {
 
 	case 'deleteaccount':
 		// Was it something I said? :(
-		if($csrf->checkKey($_POST['key'])) {
+		if($User->is_loggedin() && $csrf->checkKey($_POST['key'])) {
 			$User->delete_account($_SESSION['username']);
+			$User->logout();
 			header("Location: {$config['site_url']}");
 			die();
 		}
 		else {
 			$errormsg = '<div class="errormsg">Could not delete account!</div>';
 		}
+
+		break;
+
+	case 'changepass':
+		if($User->is_loggedin() && $csrf->checkKey($_POST['key'])) {
+			if($_POST['newpass'] == $_POST['newpass2']) {
+				if($User->change_password($_SESSION['uid'] , $_POST['newpass'])) {
+					$errormsg = '<div class="">Password has been updated.</div>';
+				}
+				else {
+					$errormsg = $User->Error ? '<div class="errormsg">' . htmlentities($User->Error) . '</div>' : '<div class="errormsg">Could not change password!</div>';
+				}
+			}
+			else {
+				$errormsg = '<div class="errormsg">Passwords do note match!</div>';
+			}
+		}
+		else {
+			$errormsg = '<div class="errormsg">Could not change password!</div>';
+		}
+
+		break;
 
 
 	case 'settings':
@@ -101,7 +124,7 @@ switch(strtolower($_GET['action'])) {
 		$title = 'Account Settings';
 		$require_settings = true;
 		break;
-	}
+}
 	
 $Template->ptitle = $title;
 ?>
@@ -224,7 +247,7 @@ elseif($require_settings == true) {
 				<strong>Current Password:</string><br />
 				<input type="text" class="textbox" value="" name="currpass" /><br /><br /><br />
 
-				<striong>New Password:</strong><br />
+				<strong>New Password:</strong><br />
 				<input type="text" class="textbox" value="" name="newpass" /><br /><br />
 
 				<strong>Confirm New Password:</strong><br />
