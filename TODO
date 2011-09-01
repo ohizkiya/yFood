@@ -3,6 +3,7 @@ GLOBAL:
  * Factor out JS/AJAX into seperate file
  * Update event.php with JS from index.php
  * COMPLETE ALL UNIT TESTS!!!1!
+ o Remove food icon stuff
 
 INDEX:
  * DATE should be optional when searching
@@ -34,6 +35,12 @@ ADMIN:
 IDEAS:
  o Export to outlook/google cal/etc
  o Basic caching for food types & campuses
+
+EVENTUALLY:
+ - Better error handling (exceptions?)
+ - Admin panel for config
+ - Better DBAC
+ - Perhaps ORM (redbean?)
 
 KEY:
  * = Important

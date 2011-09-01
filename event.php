@@ -73,15 +73,6 @@ HTML;
 
 				<div style="min-height:75px;width:200px;float:left;padding:0 5px;">
 					<b style="font-size:14px;color:#21799E;">Food served:</b><br />
-					<!-- <div style="padding-left:5px">
-						<img src="./template/images/food/pizza.png" alt="Pizza" title="Pizza"/>&nbsp;
-						<img src="./template/images/food/panda.png" alt="Chinese Food" title="Chinese Food"/>&nbsp;
-						<img src="./template/images/food/sushi.png" alt="Sushi" title="Sushi"/>&nbsp;
-						<img src="./template/images/food/burger.png" alt="Hamburgers" title="Hamburgers"/>&nbsp;
-						<img src="./template/images/food/qxx.png" alt="Hamburgers" title="Hamburgers"/>&nbsp;
-						<img src="./template/images/food/drink.png" alt="Drinks" title="Drinks"/>&nbsp;
-						<img src="./template/images/food/chip.png" alt="Refreshments" title="Refreshments"/>&nbsp;
-					</div> -->
 					<div style="padding-left:5px">{$foods}</div>
 				</div>
 
