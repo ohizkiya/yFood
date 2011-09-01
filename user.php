@@ -203,9 +203,9 @@ elseif($require_settings == true) {
 			<h2>SMS Settings:</h2>
 			<form method="post" action="">
 				<input type="checkbox" name="enable_sms" value="" /> Enable SMS notifications prior to my saved events.<br />
-				Text me <input type="text" value="10" name="sms_priormins" style="width:30px;" /> minutes prior to event start.<br />
-				Phone number: <input type="text" value="" name="sms_phonenumber" /> Carrier: 
-				<select>
+				Text me <input type="text" value="10" class="textbox" name="sms_priormins" style="width:30px;" /> minutes prior to event start.<br />
+				Phone number: <input type="text" class="textbox" value="" name="sms_phonenumber" /> Carrier: 
+				<select class="select">
 					<!-- TODO: Get these values out of here, perform strict checking, etc -->
 					<option value="cingularme.com">Cingular</option>
 					<option value="messaging.nextel.com">Nextel</option>
@@ -220,11 +220,16 @@ elseif($require_settings == true) {
  		<div id="settings-pass">
 			<h2>Change Password</h2>
 
-			<form action="" method="post">
+			<form action="./user?action=changepass" method="post">
+				<strong>Current Password:</string><br />
+				<input type="text" class="textbox" value="" name="currpass" /><br /><br /><br />
 
-				<label for="currpass">Current Password:</a> <input type="text" value="" name="currpass" /><br /><br />
-				<label for="newpass">New Password:</a> <input type="text" value="" name="newpass" /><br />
-				<label for="newpass2">Confirm New Password:</a> <input type="text" value="" name="newpass2" />
+				<striong>New Password:</strong><br />
+				<input type="text" class="textbox" value="" name="newpass" /><br /><br />
+
+				<strong>Confirm New Password:</strong><br />
+				<input type="text" class="textbox" value="" name="newpass2" />
+
 				<input type="hidden" name="key" value="{$config['csrf']}" />
 
 				<br /><br />
