@@ -42,7 +42,13 @@ ul, ol { margin: 3px 5px 5px 30px; }
 	padding: 2px 4px 2px 4px;
 	width: 200px;
 }
-.textbox:focus, .select:focus {
+
+.textarea {
+	border: 1px solid #AAA;
+	padding: 2px 4px 2px 4px;
+}
+
+.textbox:focus, .select:focus, .textarea:focus {
 	border: 1px solid #21799E;
 }
 

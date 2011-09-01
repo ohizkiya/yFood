@@ -1,8 +1,7 @@
 GLOBAL:
- o Improve look of Submit Event page
  * Factor out JS/AJAX into seperate file
  * Update event.php with JS from index.php
- * COMPLETE ALL UNIT TESTS!!!1!
+ * ADD (SMTP) EMAIL CAPABILITIES
  o Remove food icon stuff
 
 INDEX:
@@ -13,7 +12,6 @@ USER:
  * Basic user controls - Overview, SMS, change pwd
  * Validate email - before My Library, SMS usage
  * USER ROLES
-
 
 EVENTS:
  * AJAX functionality
