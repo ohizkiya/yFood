@@ -32,9 +32,9 @@ IDEAS:
 EVENTUALLY:
  - Better error handling (exceptions?)
  - Admin panel for config
- - Better DBAC
+ - Better DBAC (PDO?)
  - Perhaps ORM (redbean?)
- - Framework (+Bootstrap?)
+ - Frameworks (& bootstrap?)
  - Basic disk caching (no need right now)
 
 KEY:

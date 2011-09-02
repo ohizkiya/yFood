@@ -206,9 +206,9 @@ div.event div.event_info div.event_meta div.meta_sub {
 	font-size: 10px;
 }
 
-div.event div.event_info div.event_meta div.campus_1 { background: #21799E; } /* Wilf  */
-div.event div.event_info div.event_meta div.campus_2 { background: #9E2173; } /* Beren */
-div.event div.event_info div.event_meta div.campus_3 { background: #555; }    /* Other */
+div.event div.event_info div.event_meta div.campus_1 { background: #21799E; }
+div.event div.event_info div.event_meta div.campus_2 { background: #9E2173; }
+div.event div.event_info div.event_meta div.campus_3 { background: #555;    }
 
 div.event a.event_title {
 	font-size:14px;
