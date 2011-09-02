@@ -21,6 +21,21 @@ if(intval($id) < 1) {
 	<h1>View Event</h1>
 </div>
 
+<script type="text/javascript">
+	function save_event(eid) {
+		$.ajax({url: '<?php echo $config['site_url'] ?>ajax.php',type:'POST',data:{action:'save',eid:eid,key:'<?php echo $config['csrf']; ?>'},
+			success: function(html){
+				if(html == 'success') {
+					alert("Successfully saved event #" + eid + " to My Events");
+				}
+				else {
+					alert("Error while saving event #" + eid + " to My Events");
+				}
+			}
+		});
+	}
+</script>
+
 <?php
 if(!$event = $Event->get_event($id)) {
 	print $Event->Error;
@@ -42,7 +57,7 @@ else {
 	if($User->is_loggedin()) {
 		$icons = <<<HTML
 		<ul class="ui_icons" class="ui-widget ui-helper-clearfix">
-			<li class="ui-state-default ui-corner-all" onclick="alert('Saved Event #{$event['id']}');" title="Save to My Events"><span class="ui-icon ui-icon-folder-open"></span></li>
+			<li class="ui-state-default ui-corner-all" onclick="save_event('{$event['id']}');" title="Save to My Events"><span class="ui-icon ui-icon-folder-open"></span></li>
 			<li class="ui-state-default ui-corner-all" onclick="alert('Shared Event #{$event['id']}');" title="Share this event"><span class="ui-icon ui-icon-mail-closed"></span></li>
 		</ul>
 HTML;

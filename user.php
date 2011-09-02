@@ -57,7 +57,7 @@ switch(strtolower($_GET['action'])) {
 		$title = 'Register';
 
 		if(!$User->register($_POST['reg_email'], $_POST['reg_password'])) {
-			$errormsg = $User->Error ? '<div class="errormsg">'.htmlentities($User->Error, ENT_QUOTES).'</div>' : '';
+			$errormsg = !empty($User->Error) ? '<div class="errormsg">'.htmlentities($User->Error, ENT_QUOTES).'</div>' : '';
 			$require_register = true;
 		} else {
 			header("Location: {$config['site_url']}");
@@ -263,7 +263,7 @@ elseif($require_settings == true) {
 		<div id="settings-del">
 			<h2>Delete Account</h2><br />
  
-			<form onsubmit="return $('#confirm_delete').attr('checked') ? true : false;" action="./user?action=deleteaccount" method="post">
+			<form onsubmit="if($('#confirm_delete').attr('checked') == false) { alert('Please confirm you want to delete your account!'); return false; } return true;" action="./user?action=deleteaccount" method="post">
 				<div class="errormsg">Warning:</b> This will instantly and permamently delete your account and all My Events reservations.</div><br />
 
 				<input type="checkbox" id="confirm_delete" name="confirm_delete" value="" />
