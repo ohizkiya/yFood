@@ -1,6 +1,6 @@
 <?php define('IN_APP', true);
 /** 
- * YU Free Food
+ * yFood
  * about.php - Site about page
  *
  * @author Yudi Rosen <yudi42@gmail.com>

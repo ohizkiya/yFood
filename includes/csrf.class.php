@@ -1,6 +1,6 @@
 <?php if(!defined('IN_APP')) die();
 /** 
- * YU Free Food
+ * yFood
  * /includes/csrf.class.php - Cross-site request forgery protection class
  *
  * @author Yudi Rosen <yudi42@gmail.com>

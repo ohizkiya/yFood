@@ -1,6 +1,6 @@
 <?php if(!defined('IN_APP')) die();
 /** 
- * YU Free Food
+ * yFood
  * /includes/user.class.php - User management and auth class
  *
  * @author Yudi Rosen <yudi42@gmail.com>

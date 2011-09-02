@@ -1,6 +1,6 @@
 <?php define('IN_APP', true);
 /** 
- * YU Free Food
+ * yFood
  * user.php - User authentication & account management
  *
  * Fun Fact: This page is a mess.

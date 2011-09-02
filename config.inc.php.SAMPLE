@@ -1,6 +1,6 @@
 <?php if(!defined('IN_APP')) die();
 /** 
- * YU Free Food
+ * yFood
  * config.inc.php - Configuration script
  *
  * Please refer to the documentation for

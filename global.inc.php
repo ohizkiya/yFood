@@ -1,6 +1,6 @@
 <?php if(!defined('IN_APP')) die();
 /** 
- * YU Free Food
+ * yFood
  * global.inc.php - Global init script
  *
  * @author Yudi Rosen <yudi42@gmail.com>

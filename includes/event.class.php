@@ -1,6 +1,6 @@
 <?php if(!defined('IN_APP')) die();
 /** 
- * YU Free Food
+ * yFood
  * /includes/event.class.php - Event object class
  *
  * @author Yudi Rosen <yudi42@gmail.com>

@@ -1,6 +1,6 @@
 <?php define('IN_APP', true);
 /**
- * YU Free Food
+ * yFood
  * ajax.php - AJAX server-side functions
  *
  * @author Yudi Rosen <yudi42@gmail.com>

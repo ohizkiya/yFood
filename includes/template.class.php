@@ -1,6 +1,6 @@
 <?php if(!defined('IN_APP')) die();
 /** 
- * YU Free Food
+ * yFood
  * /includes/template.class.php - Template parser class
  *
  * @author Joshua Piccari, Yudi Rosen <yudi42@gmail.com>

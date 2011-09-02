@@ -1,5 +1,5 @@
  ##
- # YU Free Food
+ # yFood
  # .htaccess - Apache server configuration
  #
  # @author Yudi Rosen <yudi42@gmail.com>

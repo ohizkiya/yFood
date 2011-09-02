@@ -1,6 +1,6 @@
 <?php if(!defined('IN_APP')) die();
 /** 
- * YU Free Food
+ * yFood
  * /includes/mysql.class.php - MySQL Database abstraction layer class
  *
  * @author Egor Ospadov, Yudi Rosen <yudi42@gmail.com>
