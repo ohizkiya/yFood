@@ -75,19 +75,16 @@ class user {
 			$this->Error = 'Invalid e-mail address!';
 			return false;
 		}
-		
-		$s_pass = sha1($password);
+
 		$s_ip   = $_SERVER['REMOTE_ADDR'];
 		
-		$DB->query("SELECT * FROM {$config['db_prefix']}users WHERE email='{$s_email}' AND password='{$s_pass}'");
+		$user = $this->check_pass($email, $password);
 		
-		if($DB->fetch_num_rows() == 0) {
+		if($user == false) {
 			$this->Error = 'Invalid username or password!';
 			return false;
 		}
 		else {
-			$user = $DB->fetch_row();
-
 			$DB->QUERY("UPDATE {$config['db_prefix']}users SET latest_ip=INET_ATON('{$s_ip}') WHERE email='{$s_email}'");
 
 			$_SESSION['uid']      = $user['id'];
@@ -96,6 +93,29 @@ class user {
 
 			return true;
 		}
+	}
+
+	public function check_pass($email, $password) {
+		global $config, $DB;
+
+		if($this->is_valid_email($email)) {
+			$s_email = $DB->escape_string($email);
+		}
+		else {
+			$this->Error = 'Invalid e-mail address!';
+			return false;
+		}
+
+		$s_pass = sha1($password);
+
+		$DB->query("SELECT * FROM {$config['db_prefix']}users WHERE email='{$s_email}' AND password='{$s_pass}'");
+
+		if($DB->fetch_num_rows() == 0) {
+			$this->Error = 'Invalid username or password!';
+			return false;
+		}
+
+		return $DB->fetch_row();		
 	}
 
 	public function change_password($uid, $password) {
@@ -136,6 +156,8 @@ class user {
 
 
 	}
+
+	// TODO: Factor this out somehow
 	private function is_valid_email($email) {
 		return preg_match('/^([a-z0-9]+)([._-]([0-9a-z_-]+))*@([a-z0-9]+)([._-]([0-9a-z]+))*([.]([a-z0-9]+){2,4})$/i', $email);
 	}

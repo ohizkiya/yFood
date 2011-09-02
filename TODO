@@ -6,7 +6,7 @@ GLOBAL:
  * Bug: Searching the same date as an event shows nothing (easy to fix)
 
 USER:
- * Reset password functionality
+ * check_pass
  * Basic user controls - Overview, SMS, change pwd
  * Validate email - before My Library, SMS usage
  * USER ROLES

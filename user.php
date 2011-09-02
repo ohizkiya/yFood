@@ -10,17 +10,12 @@
  */
 require_once('./global.inc.php');
 
-// Valid pages to redirect to:
-// TODO: THIS.
-$returns = array('my', 'submit', 'user');
-
 /*
  * 1) Are we logged in or not?
  * If yes, we can only access settings pages or logout
  *
  * If no, we can only access login, registration, and password reset
  */
-
 switch(strtolower($_GET['action'])) {
 
 	case 'login':
@@ -104,16 +99,17 @@ switch(strtolower($_GET['action'])) {
 		}
 
 		if($User->is_loggedin() && $csrf->checkKey($_POST['key'])) {
-			if($_POST['newpass'] == $_POST['newpass2']) {
-				if($User->change_password($_SESSION['uid'] , $_POST['newpass'])) {
-					$errormsg = '<div class="notifymsg">Password has been updated.</div>';
-				}
-				else {
-					$errormsg = $User->Error ? '<div class="errormsg">' . htmlentities($User->Error) . '</div>' : '<div class="errormsg">Could not change password!</div>';
-				}
+			if($_POST['newpass'] != $_POST['newpass2']) {
+				$errormsg = '<div class="errormsg">Passwords do not match!</div>';
+			}
+			elseif(!$User->check_pass($_SESSION['username'], $_POST['currpass'])) {
+				$errormsg = '<div class="errormsg">Incorrect current password!</div>';
+			}
+			elseif($User->change_password($_SESSION['uid'] , $_POST['newpass'])) {
+				$errormsg = '<div class="notifymsg">Password has been updated.</div>';
 			}
 			else {
-				$errormsg = '<div class="errormsg">Passwords do not match!</div>';
+				$errormsg = $User->Error ? '<div class="errormsg">' . htmlentities($User->Error) . '</div>' : '<div class="errormsg">Could not change password!</div>';
 			}
 		}
 		else {
