@@ -226,7 +226,7 @@ div#userpage {
 	width:420px;
 }
 
-/* .errormsg, div#userpage .notifymsg { width: 420px; } */
+div#userpage .errormsg, div#userpage .notifymsg { width: 420px; }
 div#userpage label{color:#777; display:block;width:420px;display:inline-block;text-align:left;}
 div#userpage .logintextbox{background:#FBFBFB; border:1px solid #BBB; font-size:24px; color:#555; margin:2px 0px 16px 0px; padding:3px; width:420px}
 div#userpage .logintextbox:focus{border:1px solid #88d9e8}
