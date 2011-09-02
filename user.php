@@ -98,8 +98,6 @@ switch(strtolower($_GET['action'])) {
 		break;
 
 	case 'changepass':
-		print_r($_POST);
-
 		if(!$User->is_loggedin()) {
 			header("Location: {$config['site_url']}");
 			die();
@@ -108,21 +106,21 @@ switch(strtolower($_GET['action'])) {
 		if($User->is_loggedin() && $csrf->checkKey($_POST['key'])) {
 			if($_POST['newpass'] == $_POST['newpass2']) {
 				if($User->change_password($_SESSION['uid'] , $_POST['newpass'])) {
-					$errormsg = '<div class="">Password has been updated.</div>';
+					$errormsg = '<div class="notifymsg">Password has been updated.</div>';
 				}
 				else {
 					$errormsg = $User->Error ? '<div class="errormsg">' . htmlentities($User->Error) . '</div>' : '<div class="errormsg">Could not change password!</div>';
 				}
 			}
 			else {
-				$errormsg = '<div class="errormsg">Passwords do note match!</div>';
+				$errormsg = '<div class="errormsg">Passwords do not match!</div>';
 			}
 		}
 		else {
 			$errormsg = '<div class="errormsg">Could not change password!</div>';
 		}
 
-		echo $errormsg;
+		$require_settings = true;
 
 		break;
 
@@ -194,9 +192,6 @@ echo <<<HTML
 HTML;
 }
 elseif($require_reset == true) {
-	// TODO: Automated e-mailing
-	// mail('yudi42@gmail.com', 'Test', 'This e-mail is a test!', "From: yfood@thequipster.org\r\nReply-To: yfood@thequipster.org\r\nX-Mailer: yFood\r\n");
-
 	echo <<<HTML
 	<p style="text-align:center;">
 		If you need to reset your password, send an email to yfood@thequipster.org from the email account you used to register on yFood with.<br />
@@ -256,7 +251,9 @@ elseif($require_settings == true) {
  		<div id="settings-pass">
 			<h2>Change Password</h2>
 
-			<form action="./user?action=changepass" method="post">
+			{$errormsg}
+
+			<form action="./user?action=changepass#settings-pass" method="post">
 				<strong>Current Password:</string><br />
 				<input type="text" class="textbox" value="" name="currpass" /><br /><br /><br />
 
