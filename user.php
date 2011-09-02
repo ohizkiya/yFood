@@ -22,6 +22,7 @@ $returns = array('my', 'submit', 'user');
  */
 
 switch(strtolower($_GET['action'])) {
+
 	case 'login':
 		if($User->is_loggedin()) {
 			header("Location: {$config['site_url']}");
@@ -78,6 +79,11 @@ switch(strtolower($_GET['action'])) {
 		break;
 
 	case 'deleteaccount':
+		if(!$User->is_loggedin()) {
+			header("Location: {$config['site_url']}");
+			die();
+		}
+
 		// Was it something I said? :(
 		if($User->is_loggedin() && $csrf->checkKey($_POST['key'])) {
 			$User->delete_account($_SESSION['username']);
@@ -92,6 +98,13 @@ switch(strtolower($_GET['action'])) {
 		break;
 
 	case 'changepass':
+		print_r($_POST);
+
+		if(!$User->is_loggedin()) {
+			header("Location: {$config['site_url']}");
+			die();
+		}
+
 		if($User->is_loggedin() && $csrf->checkKey($_POST['key'])) {
 			if($_POST['newpass'] == $_POST['newpass2']) {
 				if($User->change_password($_SESSION['uid'] , $_POST['newpass'])) {
@@ -109,16 +122,16 @@ switch(strtolower($_GET['action'])) {
 			$errormsg = '<div class="errormsg">Could not change password!</div>';
 		}
 
+		echo $errormsg;
+
 		break;
 
 
 	case 'settings':
 	default:
 		if(!$User->is_loggedin()) {
-			$title = 'Member Login';
-			$errormsg = '<div class="errormsg">You must be logged in to access this page!</div>';
-			$require_login = true;
-			break;
+			header("Location: {$config['site_url']}");
+			die();
 		}
 
 		$title = 'Account Settings';
@@ -175,7 +188,7 @@ echo <<<HTML
 
 		<input type="hidden" name="key" value="{$config['csrf']}" /> 
  
-		<input name="submit" type="submit" class="button" value="Login" /> 
+		<input name="submit" type="submit" class="button" value="Register" /> 
 	</form>
 </div>
 HTML;
