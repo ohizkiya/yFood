@@ -1,15 +1,14 @@
 GLOBAL:
  * Factor out JS/AJAX into seperate file
- o Share Event option
  * ADD (SMTP) EMAIL CAPABILITIES
- o Remove food icon stuff
  * Bug: Searching the same date as an event shows nothing (easy to fix)
+ o Share Event option
 
 USER:
- * check_pass
- * Basic user controls - Overview, SMS, change pwd
+ * Basic user controls - SMS
  * Validate email - before My Library, SMS usage
  * USER ROLES
+ o SMS & Email alerts prior to event
 
 EVENTS:
  * AJAX functionality
@@ -17,7 +16,6 @@ EVENTS:
     - Flag for review?
     - (admin) Edit/Remove event
  * Submit Event functionality & admin review
- o Does My Events more-or-less work? (Seems so - 07 Aug 11)
 
 
 ADMIN:
@@ -27,10 +25,8 @@ ADMIN:
     - Stats?
     - Edit data (e.g. campuses)
 
-
 IDEAS:
  o Export to outlook/google cal/etc
- o Basic caching for food types & campuses
 
 EVENTUALLY:
  - Better error handling (exceptions?)
@@ -38,6 +34,7 @@ EVENTUALLY:
  - Better DBAC
  - Perhaps ORM (redbean?)
  - Framework (+Bootstrap?)
+ - Basic disk caching (no need right now)
 
 KEY:
  * = Important
