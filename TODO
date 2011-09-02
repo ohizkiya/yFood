@@ -36,6 +36,7 @@ EVENTUALLY:
  - Perhaps ORM (redbean?)
  - Frameworks (& bootstrap?)
  - Basic disk caching (no need right now)
+ * Better responsiveness (messages, etc)
 
 KEY:
  * = Important
