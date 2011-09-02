@@ -4,6 +4,9 @@ Launches for the Fall 2011 college semester.
 yFood is the open-source engine behind a so-far-private website that helps 
 college students find free food at their university.
 
+yFood is released under a 3-clause BSD-style license. See the included
+LICENSE file for details.
+
 Features:
  * Optional e-mail verification of members
  * Members can save events to their own personal My Events page
@@ -11,3 +14,15 @@ Features:
 
 yFood is coded in PHP and MySQL, and released under a 3-clause BSD license.
 See the included LICENSE for details.
+
+Credits:
+ * Designed and coded by Yudi Rosen
+ * Template engine based on code by Joshua Piccari
+ * DB object class based on code by Egor Ospadov
+ * Sliding panel is from web-kreation (hhttps://bit.ly/9rPJUH)
+
+Tools used to build yFood:
+ * Notepad++, WinSCP, and PuTTY
+ * GIMP for image editing
+ * PHP5, JQuery, JQuery UI, MySQL
+ * Github to centralize development
