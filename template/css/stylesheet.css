@@ -41,11 +41,15 @@ ul, ol { margin: 3px 5px 5px 30px; }
 	border: 1px solid #AAA;
 	padding: 2px 4px 2px 4px;
 	width: 200px;
+	-moz-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
 }
 
 .textarea {
 	border: 1px solid #AAA;
 	padding: 2px 4px 2px 4px;
+	-moz-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
 }
 
 .textbox:focus, .select:focus, .textarea:focus {
