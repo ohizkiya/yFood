@@ -148,7 +148,7 @@
 	height: 16px;
 }
 
-#panel input:focus.textbox { background: #545454; }
+#panel input:focus.textbox { background: #545454; box-shadow:none; }
 
 /* BUTTONS */
 /* Login and Register buttons */
