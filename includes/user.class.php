@@ -89,9 +89,11 @@ class user {
 		else {
 			$DB->QUERY("UPDATE {$config['db_prefix']}users SET latest_ip=INET_ATON('{$s_ip}') WHERE email='{$s_email}'");
 
+			// Remind me again why I had to re-name variables? >.<
 			$_SESSION['uid']      = $user['id'];
 			$_SESSION['username'] = $user['email'];
 			$_SESSION['joindate'] = $user['member_since'];
+			$_SESSION['mgroup']   = $user['mgroup'];
 
 			return true;
 		}
