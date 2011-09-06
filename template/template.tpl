@@ -141,12 +141,8 @@ HTML;
 		</div>
 
 		<div id="footer">
-			Powered by <a href="http://github.com/yrosen/yFood">yFood</a>
-			<?php
-				if($_SESSION['mgroup'] == $config['mgroup']['admin']) {
-					echo '  | <a href="./admin">Administration</a>';
-				}
-			?>
+			Powered by <a href="http://github.com/yrosen/yFood">yFood</a><?php echo ($_SESSION['mgroup'] == $config['mgroup']['admin']) ? '  | <a href="./admin">Administration</a>' : '.'; ?>
+
 		</div>
 	</div>
 </body>
