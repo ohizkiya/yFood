@@ -16,3 +16,4 @@ if(!$User->is_loggedin() || $_SESSION['mgroup'] != $config['mgroup']['admin']) {
 
 $Template->ptitle = 'Administration';
 ?>
+TODO: Administrator Page
