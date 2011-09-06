@@ -51,8 +51,10 @@ class user {
 			return false;
 		}
 		
+		$s_mgroup = $config['mgroup']['member'];
+
 		// All good, let's go...
-		$DB->query("INSERT INTO {$config['db_prefix']}users (email, password, signup_ip) VALUES ('{$s_email}', '{$s_pass}', INET_ATON('{$s_ip}'))");
+		$DB->query("INSERT INTO {$config['db_prefix']}users (email, password, mgroup, signup_ip) VALUES ('{$s_email}', '{$s_pass}', '{$s_mgroup}', INET_ATON('{$s_ip}'))");
 
 		// May as well log us in...
 		$this->login($email, $password);
