@@ -21,10 +21,10 @@ EVENTS:
 
 ADMIN:
  * Basic admin panel
-    - Add/modify/delete events
-    - Add/modify/delete users
-    - Stats?
-    - Edit data (e.g. campuses)
+    - Administer users
+    - Add Event
+    - Delete event
+    - Administer Campuses
 
 IDEAS:
  o Export to outlook/google cal/etc
