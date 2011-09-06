@@ -1,9 +1,8 @@
 GLOBAL:
  * Factor out JS/AJAX into seperate file
- * ADD (SMTP) EMAIL CAPABILITIES
+ * ADD (SMTP) EMAIL CAPABILITIES (need a mail class that is BSD compat, else roll one out)
  * Bug: Searching the same date as an event shows nothing (easy to fix)
  * Remove unused images, create sprites where possible
- o Share Event option
 
 USER:
  * Basic user controls - SMS
@@ -28,15 +27,17 @@ ADMIN:
 
 IDEAS:
  o Export to outlook/google cal/etc
+ - Save, SMS, verified accts, and other features should 
+   be put on hold to speed up launch?
 
 EVENTUALLY:
  - Better error handling (exceptions?)
- - Admin panel for config
  - Better DBAC (PDO?)
  - Perhaps ORM (redbean?)
- - Frameworks (& bootstrap?)
+ - Frameworks (& Bootstrap?)
  - Basic disk caching (no need right now)
  * Better responsiveness (messages, etc)
+ - Installation system
 
 KEY:
  * = Important
