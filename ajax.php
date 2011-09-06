@@ -32,6 +32,13 @@ switch($_POST['action']) {
 		echo 'Email!';
 		break;
 
+	case 'delete':
+		if($_SESSION['mgroup'] == $config['mgroup']['admin']) {
+			// Delete Event
+		}
+
+		break;
+
 	default:
 		header("Location: {$config['site_url']}");
 		die();

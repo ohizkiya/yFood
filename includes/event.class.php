@@ -84,6 +84,33 @@ class event {
 		//$DB->query($query);
 	}
 
+	public function delete_event($id) {
+		global $config, $DB;
+
+		$id = intval($id);
+
+		if(!$id) {
+			$this->Error = 'Invalid event ID!';
+			return false;
+		}
+
+		if($_SESSION['mgroup'] == $config['mgroup']['admin']) {
+			// Delete event:
+			$DB->query("DELETE FROM {$config['db_prefix']}events WHERE id='{$id}'");
+
+			// Delete any food served for this event:
+			$DB->query("DELETE FROM {$config['db_prefix']}foodserved WHERE eid='{$id}'");
+
+			// Delete any reservations for this event:
+			$DB->query("DELETE FROM {$config['db_prefix']}reservations WHERE eid='{$eid}'");
+
+			return true;
+		}
+
+		$this->Error = 'Only Administrators can delete an event!';
+		return false;
+	}
+
 	public function search_events($start_date, $end_date, $campus = 0, $foodtype = 0) {
 		global $config, $DB;
 
