@@ -34,7 +34,7 @@ switch($_POST['action']) {
 
 	case 'delete':
 		if($_SESSION['mgroup'] == $config['mgroup']['admin']) {
-			// Delete Event
+			$Event->delete_event($_POST['eid']);
 		}
 
 		break;
